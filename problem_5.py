@@ -1,4 +1,4 @@
- problem -5: stock span problem: similar to , nearest greater to left, problem 2
+# problem -5: stock span problem: similar to , nearest greater to left, problem 2
 
 from collections import deque
 def sol(arr):
@@ -61,3 +61,6 @@ class Solution:
                 res[i]=0
 
         return res
+
+#Input: temperatures = [73,74,75,71,69,72,76,73]
+#Output: [1,1,4,2,1,1,0,0]
