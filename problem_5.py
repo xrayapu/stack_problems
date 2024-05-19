@@ -64,3 +64,57 @@ class Solution:
 
 #Input: temperatures = [73,74,75,71,69,72,76,73]
 #Output: [1,1,4,2,1,1,0,0]
+
+
+
+
+
+
+# leetcode 901< online stack span problem. arr: int() 
+
+
+class StockSpanner:
+
+    def __init__(self):
+        self.stack=[] # pair=[ : ]
+        
+
+    def next(self, arr: int) -> int:
+
+        # arr: int -> int , na hoiya >>  arr : list[int ] -> list[int] hoile, solution below possible
+        
+        # ans=[-1]*len(arr)
+        # res=[0] * len(arr)
+
+        # s= deque()
+        # for i in range(len(arr)):
+
+        #     while s:
+                
+        #         if s[-1][0] > it[i]:
+        #             ans[i]=s[-1][1]
+        #             break
+                    
+        #         else: 
+        #             s.pop()
+                    
+        #     s.append((arr[i],i))
+
+        # for i in range(len(it)):
+        #     res[i] = i - ans[i]
+
+        # return res
+
+        ans=1
+        while self.stack and self.stack[-1][0] <= arr:
+            ans+= self.stack[-1][1]
+            self.stack.pop()
+        self.stack.append((arr,ans))
+        return ans
+
+
+
+
+# Your StockSpanner object will be instantiated and called as such:
+# obj = StockSpanner()
+# param_1 = obj.next(price)
